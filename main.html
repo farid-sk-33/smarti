@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Smarti · Cricket Poster</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0b1a12;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .sports-font {
+            font-family: 'Graduate', serif;
+        }
+        /* deep turf + glow */
+        .turf-gradient {
+            background: radial-gradient(circle at 30% 20%, #1e4d33 0%, #0b2a1a 80%, #05160e 100%);
+        }
+        .neon-glow {
+            text-shadow: 0 0 12px rgba(74, 222, 128, 0.5), 0 0 30px rgba(74, 222, 128, 0.2);
+        }
+        .neon-border {
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.25), inset 0 0 20px rgba(74, 222, 128, 0.05);
+        }
+        /* subtle pulse for countdown */
+        .pulse-dot {
+            animation: pulse-dot 1.4s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.4; transform: scale(0.9); }
+        }
+        /* interactive hover effects */
+        .card-hover {
+            transition: all 0.2s ease;
+        }
+        .card-hover:hover {
+            border-color: rgba(74, 222, 128, 0.5);
+            background: rgba(30, 50, 40, 0.6);
+            transform: translateY(-2px);
+        }
+        .btn-action {
+            transition: all 0.2s ease;
+        }
+        .btn-action:hover {
+            background: #1f3d2c;
+            border-color: #4ade80;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="relative w-full max-w-md mx-auto turf-gradient border-2 border-green-400/60 rounded-3xl overflow-hidden neon-border shadow-2xl flex flex-col">
+
+    <!-- decorative turf lines (ambient) -->
+    <div class="absolute inset-x-0 top-0 h-0.5 bg-white/5"></div>
+    <div class="absolute inset-y-0 left-1/2 w-px border-l border-dashed border-white/5 pointer-events-none"></div>
+    <div class="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-56 h-56 border border-white/5 rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/4 right-6 w-20 h-20 border border-white/5 rounded-full pointer-events-none"></div>
+
+    <!-- Header badge -->
+    <div class="z-10 mt-5 mx-auto bg-green-500/10 border border-green-400/30 text-green-300 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+        Match Day Live
+    </div>
+
+    <!-- Hero section -->
+    <div class="z-10 px-5 pt-4 pb-1 text-center relative">
+        <!-- cricket icons: bat + ball -->
+        <div class="flex justify-center items-center gap-4 mb-3">
+            <!-- bat left -->
+            <svg class="w-11 h-11 text-green-400/80 drop-shadow-lg transform -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048" />
+                <path d="M4 20L15 9L18 12L7 23H4V20Z" fill="currentColor" fill-opacity="0.15" />
+                <path d="M15 9L18 6L16 4L13 7" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+            <!-- ball -->
+            <div class="relative w-14 h-14 bg-gradient-to-br from-lime-400 to-emerald-500 rounded-full flex items-center justify-center shadow-xl shadow-green-500/40 hover:scale-105 transition-transform duration-300 cursor-default border border-white/20">
+                <span class="absolute w-full border-t border-dashed border-white/50 rotate-45"></span>
+                <span class="absolute w-full border-t border-dashed border-white/50 -rotate-45"></span>
+                <i class="fa-solid fa-bolt text-zinc-900 text-xl drop-shadow-sm"></i>
+            </div>
+            <!-- bat right -->
+            <svg class="w-11 h-11 text-green-400/80 drop-shadow-lg transform rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048" />
+                <path d="M20 20L9 9L6 12L17 23H20V20Z" fill="currentColor" fill-opacity="0.15" />
+                <path d="M9 9L6 6L8 4L11 7" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+        </div>
+
+        <p class="text-[11px] uppercase tracking-[0.3em] text-lime-300 font-semibold">Squad Spotlight</p>
+        <h1 class="sports-font text-5xl md:text-6xl font-black tracking-wider text-white drop-shadow-[0_6px_12px_rgba(0,0,0,0.7)] neon-glow">
+            SMARTI
+        </h1>
+        <p class="text-sm font-medium tracking-[0.2em] text-zinc-300 mt-1">CRICKET TURF FACE-OFF</p>
+    </div>
+
+    <!-- Core info cards -->
+    <div class="z-10 px-5 py-3 flex flex-col gap-3.5">
+
+        <!-- Date -->
+        <div class="card-hover bg-zinc-900/70 backdrop-blur-sm border border-white/10 rounded-2xl p-3.5 flex items-center gap-4">
+            <div class="w-11 h-11 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 text-lg border border-green-500/30 shrink-0">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-wider text-zinc-400 font-bold">Match Date</p>
+                <p class="text-lg font-bold text-white tracking-wide leading-tight">June 26, 2026</p>
+                <p class="text-[11px] text-lime-300">Friday Showdown</p>
+            </div>
+        </div>
+
+        <!-- Time -->
+        <div class="card-hover bg-zinc-900/70 backdrop-blur-sm border border-white/10 rounded-2xl p-3.5 flex items-center gap-4">
+            <div class="w-11 h-11 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 text-lg border border-green-500/30 shrink-0">
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-wider text-zinc-400 font-bold">Match Timing</p>
+                        <p class="text-lg font-bold text-white tracking-wide">06:00 PM – 09:00 PM</p>
+                    </div>
+                    <span class="bg-lime-400/20 text-lime-300 font-black text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider border border-lime-400/30">
+                        3 Hrs
+                    </span>
+                </div>
+                <p class="text-[11px] text-lime-300">High-Intensity Session</p>
+            </div>
+        </div>
+
+        <!-- Venue + map action -->
+        <div class="card-hover bg-zinc-900/70 backdrop-blur-sm border border-white/10 rounded-2xl p-3.5 flex items-center gap-4">
+            <div class="w-11 h-11 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 text-lg border border-green-500/30 shrink-0">
+                <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div class="flex-1">
+                <p class="text-[10px] uppercase tracking-wider text-zinc-400 font-bold">Venue</p>
+                <p class="text-lg font-bold text-white tracking-wide">Riyan Turf</p>
+                <p class="text-xs text-zinc-300">Bhiwandi, Maharashtra</p>
+            </div>
+            <button onclick="openMaps()" class="bg-zinc-800 hover:bg-zinc-700 p-2.5 rounded-xl text-zinc-300 hover:text-white transition-all border border-white/5" title="Get Directions">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+            </button>
+        </div>
+
+        <!-- Countdown block -->
+        <div class="bg-zinc-950/80 border border-green-500/20 rounded-2xl p-4 text-center mt-1">
+            <p class="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-bold flex items-center justify-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-red-500 pulse-dot"></span>
+                Countdown to Match Kick-off
+            </p>
+            <div class="grid grid-cols-4 gap-2 mt-2">
+                <div class="bg-zinc-900/90 p-2 rounded-xl border border-white/5">
+                    <span id="days" class="block text-2xl font-black text-lime-400">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-zinc-500 font-bold">Days</span>
+                </div>
+                <div class="bg-zinc-900/90 p-2 rounded-xl border border-white/5">
+                    <span id="hours" class="block text-2xl font-black text-lime-400">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-zinc-500 font-bold">Hours</span>
+                </div>
+                <div class="bg-zinc-900/90 p-2 rounded-xl border border-white/5">
+                    <span id="minutes" class="block text-2xl font-black text-lime-400">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-zinc-500 font-bold">Mins</span>
+                </div>
+                <div class="bg-zinc-900/90 p-2 rounded-xl border border-white/5">
+                    <span id="seconds" class="block text-2xl font-black text-lime-400">00</span>
+                    <span class="text-[9px] uppercase tracking-wider text-zinc-500 font-bold">Secs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer actions -->
+    <div class="z-10 p-5 bg-zinc-950/70 backdrop-blur-sm border-t border-white/10 flex flex-col gap-3">
+        <div class="grid grid-cols-2 gap-3">
+            <button onclick="addToCalendar()" class="btn-action bg-zinc-900/80 hover:bg-zinc-800 text-white font-bold py-3 px-3 rounded-xl border border-white/10 hover:border-green-400/50 transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                <i class="fa-regular fa-calendar-plus text-green-400 text-sm"></i>
+                Calendar
+            </button>
+            <button onclick="sharePoster()" class="btn-action bg-zinc-900/80 hover:bg-zinc-800 text-white font-bold py-3 px-3 rounded-xl border border-white/10 hover:border-green-400/50 transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                <i class="fa-solid fa-share-nodes text-green-400 text-sm"></i>
+                Share
+            </button>
+        </div>
+        <div class="text-center text-[10px] text-zinc-500 tracking-widest mt-1">
+            <i class="fa-regular fa-circle-check text-green-400/60 mr-1"></i> #TeamSmarti • Turf Nation
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ----- realtime countdown to June 26, 2026 18:00 (6pm) -----
+        const targetDate = new Date('2026-06-26T18:00:00+05:30').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            let diff = targetDate - now;
+            if (diff < 0) diff = 0;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ----- interactive functions (demo) -----
+        window.openMaps = function() {
+            // simulate maps action
+            alert('📍 Riyan Turf, Bhiwandi, Maharashtra\nOpen in Google Maps? (simulated)');
+            // in real scenario: window.open('https://maps.google.com?q=Riyan+Turf+Bhiwandi');
+        };
+
+        window.addToCalendar = function() {
+            alert('📅 Match added to your calendar (simulated).\nJun 26, 2026 6:00 PM – 9:00 PM');
+            // could generate .ics or Google Calendar link
+        };
+
+        window.sharePoster = function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Team Smarti Cricket Match',
+                    text: '🏏 SMARTI vs Opponent • June 26, 2026 • 6PM @ Riyan Turf',
+                    url: window.location.href,
+                }).catch(() => {});
+            } else {
+                alert('📣 Share this poster:\n"Team Smarti Cricket Face-off"\nJune 26, 2026 • 6PM • Riyan Turf');
+            }
+        };
+    })();
+</script>
+
+<!-- small extra style for better mobile touch -->
+<style>
+    button, .card-hover, .cursor-pointer {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .backdrop-blur {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+</style>
+</body>
+</html>
